@@ -20,4 +20,5 @@ The dev-tools team does not cover rustc or Cargo, which are large and establishe
 * [Rustfmt](https://github.com/rust-lang-nursery/rustfmt)
 * [Rustdoc](https://github.com/rust-lang/rust/tree/master/src/librustdoc)
 * [Clippy](https://github.com/Manishearth/rust-clippy)
+* [`bindgen`](https://github.com/servo/rust-bindgen/)
 * ... (TODO)
