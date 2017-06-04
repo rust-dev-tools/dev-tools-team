@@ -20,6 +20,7 @@ Tool roadmaps are currently at the 'brainstorming' stage - we're collecting a li
 
 * Improve contribution to tools
 * Improve discoverability/delivery of high quality tools
+* Distributing tools with Rust/Rustup
 
 ## Other areas of interest
 

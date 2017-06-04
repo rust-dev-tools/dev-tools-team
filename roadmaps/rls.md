@@ -8,6 +8,7 @@ See also [GH project](https://github.com/rust-lang-nursery/rls/projects/2)
 * beta, then 1.0 level of quality
 * support common Cargo workflows (workspaces, lib/bin, cross-compilation)
 * change model of operation to better integrate with incremental type checking/on demand compilation
+* streamline save-analysis component of compiler
 * compiler-powered code completion
 * auto-imports
 * search (path search, text search, Rust-specific searches - e.g., find impls)
