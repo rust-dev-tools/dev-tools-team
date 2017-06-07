@@ -8,10 +8,10 @@ There is a risk that if handled badly, deliberate or accidental instability of
 tools could reflect poorly on Rust's stability guarantees (which are an
 important and sensitive topic).
 
-[Rustfmt](rustfmt.md)
-[RLS](rls.md)
-[Clippy](clippy.md)
-[Rustdoc](rustdoc.md)
+* [Rustfmt](rustfmt.md)
+* [RLS](rls.md)
+* [Clippy](clippy.md)
+* [Rustdoc](rustdoc.md)
 
 ## background
 
