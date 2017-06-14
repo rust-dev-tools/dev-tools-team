@@ -4,7 +4,7 @@ We want to make tools an attractive domain for people to contribute to the Rust
 community. For that we need to attract more contributors and make life better
 for them.
 
-We discussed this at the [2017-06-12 meeting](../minutes/meeting notes 2017-06-12.md).
+We discussed this at the [2017-06-12 meeting](../minutes/meeting%20notes%202017-06-12.md).
 
 ## Removing barriers to entry
 
