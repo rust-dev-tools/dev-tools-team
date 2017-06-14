@@ -13,7 +13,7 @@ Tool roadmaps are currently at the 'brainstorming' stage - we're collecting a li
 * [Rustfmt](rustfmt.md)
 * [Rustup](TODO)
 * [Racer](TODO)
-* [Xargo](TODO)
+* [Xargo](xargo.md)
 
 
 ## General issues/cross-cutting concerns
