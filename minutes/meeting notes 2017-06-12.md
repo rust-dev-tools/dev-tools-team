@@ -4,6 +4,7 @@ Focussed week - contribution, Vidyo meeting
 
 ## Notes
 
+```
 mk - architectural docs
    - source code organisation
 mw - minimise API needed to know to contribute, e.g., Clippy
@@ -52,7 +53,7 @@ kc - can we have a process for all tools for path to maintainer, etc.?
 mg - wary of defined path, leads to gaming, e.g., wikipedia, issues with interpreting the rules
 jt - guidelines rather than rules
 nf - highlight that it is possible to progress
-
+```
 
 
 
