@@ -94,9 +94,19 @@ TODO
 
 ## Linting
 
+### clippy
+
+Clippy is a collection of lints to catch common mistakes and improve your Rust code.
+It also covers code style issues that aren't just syntactical and require type information.
+It comes as a compiler plugin and as a cargo subcommand (`cargo clippy`).
+
+* Install using `cargo install clippy` (requries nightly)
+* [Source code](https://github.com/Manishearth/rust-clippy)
+* [Lint Documentation](https://github.com/Manishearth/rust-clippy/wiki)
+* [Contribution docs](https://github.com/Manishearth/rust-clippy/blob/master/CONTRIBUTING.md)
+
 TODO
 
-* clippy
 * sanitisers
 
 ## Documentation and code exploration
