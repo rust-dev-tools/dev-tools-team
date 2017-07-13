@@ -104,13 +104,9 @@ Possible measures:
 
 ### Inclusion with 'Rust product'
 
-Currently at this stage.
-
-### stable channel
-
 I.e., what does RLS need to do to ride the trains
 
-* Provide back compat guarantees
+* Agree on back compat guarantees
 * Tests running on Rust CI
 * De facto unstable features are behind the unstable features option
 * Unstable features option is linked to nightly toolchain

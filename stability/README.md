@@ -141,19 +141,14 @@ We should define how stable a tool must be for each of these milestones.
 
 * included into the main repo
 * tests run on CI
-* distributed on nightly channel only
-* a Rustup component
-
-Current example: RLS
-
-
-### stable channel
-
 * distributed on all channels (stable, beta, nightly)
+* a Rustup component
 * possibly distributed on channels other than Rustup
 
+Current example: RLS (not riding trains)
 
-### stable
+
+### Announced stable
 
 * tool is 1.0 (and meets expectations for 1.0 stability)
 * Rustup component is un-suffixed

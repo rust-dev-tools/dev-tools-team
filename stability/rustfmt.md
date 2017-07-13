@@ -10,10 +10,10 @@ means for tools in general see [README.md](README.md).
 
 I don't think we can promise 'no changes' without it preventing us fixing bugs.
 I think we can promise that there will be no changes which violate the RFC/spec.
-That would leave us some wriggle room in the ambiguities. It raises the question
-of what happens if we change the spec. I hope we finish the spec before Rustfmt
-1.0 and any changes after that (beyond 'bug fixes') are a breaking change for
-Rustfmt.
+That would leave us some wriggle room in the ambiguities. Changes to the spec
+would be handled in the same way as changes to the Rust language - they would be
+breaking changes unless they were considered 'bug fixes', and in that case would
+require a warning cycle.
 
 I think we should only make promises for the default options. No promises at all
 if you're using any non-default options.
@@ -146,10 +146,6 @@ checks.
 ### Inclusion with 'Rust product'
 
 * agree on stability criteria
-
-
-### stable channel
-
 * tests running and passing on CI
 * overwrite mode by default
 * implement stable/unstable command line arguments
@@ -160,6 +156,7 @@ checks.
 
 * audit command line options
 * audit config options
+* style guide RFC accepted
 * RFC style fully implemented
 * audit exit codes
 * TBD - bugs, performance (at least collect data), skip attributes
