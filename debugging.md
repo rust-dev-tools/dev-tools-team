@@ -12,7 +12,7 @@ database) for Windows/visual studio (pdb support is WIP in LLVM, I believe).
 
 Debuggers consume the generated symbols. Visual Studio only works on Windows.
 LLDB works everywhere but is primarily used as a backend for XCode on MacOS. GDB
-works everywhere. Visual Studio only works on Windows. GDB and LLDB are command
+works everywhere. GDB and LLDB are command
 line tools, but can have frontends.
 
 Debugger support can come in various forms in this architecture:
@@ -27,7 +27,7 @@ Debugger support can come in various forms in this architecture:
 
 
 
-## pretty printers
+## Pretty printers
 
 * need to run via the scripts (in https://github.com/rust-lang/rust/tree/master/src/etc))
 * still needed even with upstream improvements
@@ -42,9 +42,9 @@ Debugger support can come in various forms in this architecture:
 * http://www.jonathanturner.org/2017/03/rust-in-windows.html
 
 
-## potential improvements
+## Potential improvements
 
-### debug info
+### Debug info
 
 Better support for trait objects and method calls. TODO would this require DWARF extensions?
 
@@ -80,6 +80,11 @@ Similar questions as to macros in error message. Should we allow authors to mark
 macros as opaque? Or use the per-crate heuristic? (Only show info for same-crate
 macros).
 
+### Executing statements during debugging
+
+GDB supports evaluating C statements and running them on the target (e.g. `*0x1247 = 42`)
+We could leverage miri to compile Rust statements, interpret them and run all address accesses through GDB.
+
 ## Misc
 
 ### ref/ptr
@@ -89,10 +94,10 @@ We should encode references as C++ references, not pointers
 Might be back compat with pretty printers
 
 
-### buggy debuginfo for inline function
+### Buggy debuginfo for inline function
     
 * Is this llvm or us?
-* MIR inlinging - are we adjusting debuginfo?
+* MIR inlining - are we adjusting debuginfo?
 
 
 ### lldb plugin
