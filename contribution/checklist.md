@@ -8,6 +8,7 @@ and existing contributors.
 
 - [ ] it exists
 - [ ] it is in an official looking org (either rust-lang-nursery or a tool-specific org)
+- [ ] CI (e.g., Travis + Appveyor) is running
 - [ ] a 'comment here to help' issue, linked from CONTRIBUTING.md
 - [ ] has an issue label for "good-first-issue" (or E-easy), there are at least a handful of such issues
 
