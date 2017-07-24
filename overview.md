@@ -85,14 +85,14 @@ probably don't want to use it directly, but rather via an editor extension.
 
 ### IntelliJ
 
-Rust support in IntelliJ is provided by the community. It offers better feature
-support and performance than VSCode, but support for Rust language features is
-less complete. If you like IntelliJ or other 'heavyweight' IDEs, you should like
-it. It is written in [Kotlin](https://kotlinlang.org/).
+Rust support in IntelliJ is provided by JetBrains via an open source plugin,
+written in [Kotlin](https://kotlinlang.org/). It uses its own Rust programming
+language model instead of RLS, so some features available in RLS might not be
+available in IntelliJ and vice verse.
 
 * [Website](https://intellij-rust.github.io/)
 * [Source code](https://github.com/intellij-rust/intellij-rust)
-* [Documentation](https://github.com/intellij-rust/intellij-rust/blob/master/README.md),
+* [Documentation](https://intellij-rust.github.io/docs/quick-start.html),
   [developer docs](https://github.com/intellij-rust/intellij-rust/blob/master/CONTRIBUTING.md),
   and [architecture docs](https://github.com/intellij-rust/intellij-rust/blob/master/ARCHITECTURE.md).
 
