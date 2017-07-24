@@ -16,14 +16,25 @@ works everywhere. GDB and LLDB are command
 line tools, but can have frontends.
 
 Debugger support can come in various forms in this architecture:
-* we could invent our own debugger and debug symbols (this is infeasible due to resourcing)
+* we could invent our own debugger and debug symbols (this is probably infeasible
+  due to resourcing)
+  - There are experiments using MIRI for debugging - https://github.com/oli-obk/priroda
 * generate better debuginfo in the compiler - most of the low hanging fruit here is done
 * extend debug symbols with Rust-specific forms
+  - DWARF is designed to accomodate this
+  - would need support in GDB/LLDB
+  - we would like to change the representation of some Rust items in non-back-compat ways
+  - from mw: "My current thinking is to add a compiler flag, -Zrust-dwarf or
+    something, that allow to opt into the new format, and start making changes in
+    LLVM, GDB, and LLDB as needed. The debuginfo generated here would only be
+    expected to work with our branches of debuggers initially. At the same time
+    the old format is still emitted by default until we are ready to flip the switch."
 * improve the debuggers handling of Rust
   - plugins (I think this is primarily an LLDB thing)
   - land code in the debuggers (done to some extent in GDB)
   - improve the debuggers *and* the debug symbols
-  - pretty printers (used by debuggers to display rust data, see gdb and lldb pretty printers in https://github.com/rust-lang/rust/tree/master/src/etc)
+  - pretty printers (used by debuggers to display rust data, see gdb and lldb
+    pretty printers in https://github.com/rust-lang/rust/tree/master/src/etc)
 
 
 
@@ -40,21 +51,29 @@ Debugger support can come in various forms in this architecture:
 * we support as much as llvm, but llvm is incomplete
 * no CI for testing this
 * http://www.jonathanturner.org/2017/03/rust-in-windows.html
-
+* Visualisers can be used to improve the experience for key types like `Vec`
+  - https://docs.microsoft.com/en-us/visualstudio/debugger/create-custom-views-of-native-objects
 
 ## Potential improvements
 
 ### Debug info
 
-Better support for trait objects and method calls. TODO would this require DWARF extensions?
+Better support for trait objects and method calls.
+
+From tromey on trait objects: "for printing trait objects, only a minor DWARF
+extension is needed; specifically, a way to link a vtable to the concrete type
+for which it was created. That is, no new tag is needed, just the ability to put
+a DW_AT_containing_type on the vtable object's DIE.".
 
 Extending DWARF with Rust-specific forms, would need to upstream stuff to understand it (e.g., calling convention, enums).
 
 * compiler emits new stuff
 * modify LLVM (type layouts prob easy, maybe some optimisation issues)
+  - LLVM must know about all debuginfo attributes and tags, it can't just 'pass through'
 * modify lldb + gdb (if it is lang-specific or in a plugin, then probably doesn't need to be standardised)
 * maybe some day standardise
-* graceful degradation - llvm can't support different versions of debuginfo - how to handle older debuggers or if, e.g., GDB gets ahead of LLDB?
+* graceful degradation - llvm can't support different versions of debuginfo in the same binary, the user must choose the format at compile-time.
+  - how to handle older debuggers or if, e.g., GDB gets ahead of LLDB?
 
 
 ### Distribution improvements
@@ -101,6 +120,8 @@ Might be back compat with pretty printers
 
 
 ### lldb plugin
+
+Some work underway - see https://docs.google.com/document/d/1a2v0ro40vy3z-Np44CF-5v6THH9Huy_Dtp8-aUIdgkM/edit
 
 TODO what does this mean?
 
