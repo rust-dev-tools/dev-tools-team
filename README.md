@@ -19,7 +19,7 @@ The dev-tools team does not cover rustc or Cargo, which are large and establishe
   - [rls-vfs](https://github.com/nrc/rls-vfs)
 * [Rustfmt](https://github.com/rust-lang-nursery/rustfmt)
 * [Rustdoc](https://github.com/rust-lang/rust/tree/master/src/librustdoc)
-* [Clippy](https://github.com/Manishearth/rust-clippy)
+* [Clippy](https://github.com/rust-lang-nursery/rust-clippy)
 * [`bindgen`](https://github.com/servo/rust-bindgen/)
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust)
 * ... (TODO)
