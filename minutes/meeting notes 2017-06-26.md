@@ -1,4 +1,4 @@
-# June 19th 2017
+# June 26th 2017
 
 Agenda week, cross-compilation and Xargo
 
