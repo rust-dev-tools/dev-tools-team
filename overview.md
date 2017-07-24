@@ -54,14 +54,67 @@ file in your project. Run with `cargo watch`.
 
 ## IDEs and editors
 
-TODO
+Many editors have some Rust support, from basic syntax highlighting to full IDE features.
 
-* intellij
-* vs code
-* RLS
-* sublime, atom, emacs, vim
-   - syntax highlighting
-* Racer
+For IDE support we recommend either VSCode with the Rust Language Server or
+IntelliJ. The Rust Language Server is an editor-independent service for
+providing IDE functionality using the [Language Server Protocol](http://langserver.org/).
+Any editor can be an RLS client and we hope many editors will take advantage of it.
+
+### Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com/) is a cross-platform, open
+source IDE from Microsoft. It has very basic support (syntax highlighting) out
+of the box. For better Rust support, install the Rust (RLS) plugin:
+
+* [In the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
+* Install in VSCode with `ext install rust` in the command palette.
+* [Source code](https://github.com/rust-lang-nursery/rls-vscode)
+* [Developer docs](https://github.com/rust-lang-nursery/rls-vscode/blob/master/contributing.md)
+
+### The RLS
+
+The power behind the above VSCode extension is the RLS. It interacts with the
+compiler to provide information about Rust programs to IDEs and editors. You
+probably don't want to use it directly, but rather via an editor extension.
+
+* Install with `rustup component add rls` (but your editor should do this for you)
+* [Source code](https://github.com/rust-lang-nursery/rls)
+* [Documentation](https://github.com/rust-lang-nursery/rls/blob/master/README.md)
+  and [developer docs](https://github.com/rust-lang-nursery/rls/blob/master/contributing.md)
+
+### IntelliJ
+
+Rust support in IntelliJ is provided by the community. It offers better feature
+support and performance than VSCode, but support for Rust language features is
+less complete. If you like IntelliJ or other 'heavyweight' IDEs, you should like
+it. It is written in [Kotlin](https://kotlinlang.org/).
+
+* [Website](https://intellij-rust.github.io/)
+* [Source code](https://github.com/intellij-rust/intellij-rust)
+* [Documentation](https://github.com/intellij-rust/intellij-rust/blob/master/README.md),
+  [developer docs](https://github.com/intellij-rust/intellij-rust/blob/master/CONTRIBUTING.md),
+  and [architecture docs](https://github.com/intellij-rust/intellij-rust/blob/master/ARCHITECTURE.md).
+
+### Other editors
+
+Many editors have plugins or extensions that provide some degree of support
+(syntax highlighting, snippets, etc.). **Racer** is a tool for providing code
+completion and 'goto def' features. It uses it's own parsing and type inference,
+so is very quick, but sometimes incomplete. There are extensions using Racer for
+many editors.
+
+* [Racer source](https://github.com/racer-rust/racer)
+* [Racer docs](https://github.com/racer-rust/racer/blob/master/README.md)
+* There is [editor support for Racer](https://github.com/racer-rust/racer/blob/master/README.md#editorsides-supported)
+  in Atom, Eclipse, Emacs, GEdit, Kakoune, Kate, Sublime Text, Vim, and Visual
+  Studio Code.
+* The Rust teams maintain editor support (configuration and/or syntax highlighting)
+  for [Sublime Text](https://github.com/rust-lang/sublime-rust),
+  [Emacs](https://github.com/rust-lang/rust-mode), [Vim](https://github.com/rust-lang/rust.vim),
+  [GEdit](https://github.com/rust-lang/gedit-config), [Nano](https://github.com/rust-lang/nano-config),
+  and [Kate](https://github.com/rust-lang/kate-config).
+
 
 ## Debugging and profiling
 
