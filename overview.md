@@ -164,10 +164,27 @@ TODO
 
 ## Documentation and code exploration
 
+### Rustdoc
+
+You probably don't need to use rustdoc directly (instead going through `cargo doc`). Accepts a crate
+and generates HTML pages for its public documentation. Can also execute code blocks within the
+documentation as tests. Part of the normal Rust distribution.
+
+* [Source code](https://github.com/rust-lang/rust/tree/master/src/librustdoc) (part of the Rust
+  compiler source code)
+* Install using Rustup (see above).
+
+### Rustdoc 2
+
+In-progress reimplementation of rustdoc using the RLS as a backend (rather than compiler-internal
+libraries). Plans include JSON output, multiple pluggable "frontends" to render as different
+formats, and separating out the HTML design to allow more contributors to work on the site design.
+
+* [Source code](https://github.com/steveklabnik/rustdoc)
+* [Contribution docs](https://github.com/steveklabnik/rustdoc/blob/master/CONTRIBUTING.md)
+
 TODO
 
-* rustdoc
-* rustdoc 2
 * rustw
 * docs.rs
 
