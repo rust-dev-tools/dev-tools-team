@@ -7,8 +7,10 @@ tools means any tool a Rust programmer might use when writing, reading, testing,
 or running Rust programs. For example, Rust integration with editors or IDEs,
 Rustdoc, bindgen, etc.
 
-The dev-tools team does not cover rustc or Cargo, which are large and established enough to need their own dedicated teams.
+The dev-tools team does not cover rustc or Cargo, which are large and established
+enough to need their own dedicated teams.
 
+For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/22).
 
 ## Links to tools
 
