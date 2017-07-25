@@ -22,6 +22,6 @@ For news as it happens, see the [current tools news issue](https://github.com/nr
 * [Rustfmt](https://github.com/rust-lang-nursery/rustfmt)
 * [Rustdoc](https://github.com/rust-lang/rust/tree/master/src/librustdoc)
 * [Clippy](https://github.com/rust-lang-nursery/rust-clippy)
-* [`bindgen`](https://github.com/servo/rust-bindgen/)
+* [bindgen](https://github.com/rust-lang-nursery/rust-bindgen)
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust)
 * ... (TODO)
