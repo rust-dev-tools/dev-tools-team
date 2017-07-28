@@ -180,6 +180,11 @@ In-progress reimplementation of rustdoc using the RLS as a backend (rather than 
 libraries). Plans include JSON output, multiple pluggable "frontends" to render as different
 formats, and separating out the HTML design to allow more contributors to work on the site design.
 
+The initial plans for the new rustdoc were discussed [during the dev-tools meeting on
+2017-05-30][2017-05-30].
+
+[2017-05-30]: https://github.com/nrc/dev-tools-team/blob/master/minutes/meeting%20notes%202017-05-30.md
+
 * [Source code](https://github.com/steveklabnik/rustdoc)
 * [Contribution docs](https://github.com/steveklabnik/rustdoc/blob/master/CONTRIBUTING.md)
 
