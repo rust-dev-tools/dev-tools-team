@@ -166,13 +166,14 @@ TODO
 
 ### Rustdoc
 
-You probably don't need to use rustdoc directly (instead going through `cargo doc`). Accepts a crate
-and generates HTML pages for its public documentation. Can also execute code blocks within the
-documentation as tests. Part of the normal Rust distribution.
+Rustdoc generates API documentation for Rust crates.  You probably don't need to use rustdoc
+directly (instead going through `cargo doc`). Accepts a crate and generates HTML pages for its
+public documentation. Can also execute code blocks within the documentation as tests. Part of the
+normal Rust distribution.
 
 * [Source code](https://github.com/rust-lang/rust/tree/master/src/librustdoc) (part of the Rust
   compiler source code)
-* Install using Rustup (see above).
+* Install using Rustup (see above). Installed by default when you get rustc.
 
 ### Rustdoc 2
 
