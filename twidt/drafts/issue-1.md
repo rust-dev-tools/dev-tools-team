@@ -30,6 +30,7 @@ you'd like us to report, please comment on the [tracking issue](https://github.c
 * [Racer](https://github.com/racer-rust/racer) 2.0.10 [changelog](https://github.com/racer-rust/racer/blob/master/CHANGELOG.md#2010)
 * [Bindgen](https://github.com/rust-lang-nursery/rust-bindgen) 0.29.0 [announcement](https://users.rust-lang.org/t/bindgen-automatically-generate-rust-ffi-bindings-to-c-and-c-libraries/12126)
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust) #48 [changelog](https://intellij-rust.github.io/2017/08/07/changelog-48.html)
+* [cargo-edit](https://github.com/killercup/cargo-edit) 0.2 [release notes](https://github.com/killercup/cargo-edit/releases/tag/v0.2.0)
 
 
 ## RFCs
