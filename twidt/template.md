@@ -8,6 +8,9 @@ These Weeks in Dev-Tools will keep you up to date with all the exciting dev
 tools news. We plan to have a new issue every few weeks. If you have any news
 you'd like us to report, please comment on the [tracking issue](https://github.com/nrc/dev-tools-team/issues/TODO).
 
+If you're interested in Rust's developer tools and want to contribute or ask
+questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
+
 
 * TODO news
 

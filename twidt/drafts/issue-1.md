@@ -11,6 +11,8 @@ These Weeks in Dev-Tools will keep you up to date with all the exciting news
 in this area. We plan to have a new issue every few weeks. If you have any news
 you'd like us to report, please comment on the [tracking issue](https://github.com/nrc/dev-tools-team/issues/25).
 
+If you're interested in Rust's developer tools and want to contribute or ask
+questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 
 * Announced and released the [RLS Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
 * [Clippy](https://github.com/rust-lang-nursery/rust-clippy) and [Bindgen](https://github.com/rust-lang-nursery/rust-bindgen) moved into the [rust-lang nursery]()
