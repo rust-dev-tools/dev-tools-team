@@ -39,8 +39,8 @@ you'd like us to report, please comment on the [tracking issue](https://github.c
 
 ## Thanks!
 
-* @photoszz has been re-writing various ad-hoc computations into fix-point analyses in Bindgen:
-  - whether we can add derive(Debug) to a struct: rust-lang-nursery/rust-bindgen#824
+* [@photoszzt](https://github.com/photoszzt) has been re-writing various ad-hoc computations into fix-point analyses in Bindgen:
+  - whether we can add `derive(Debug)` to a struct: rust-lang-nursery/rust-bindgen#824
   - and whether a struct has a virtual table: rust-lang-nursery/rust-bindgen#850
 * @topecongiro for doing sustained, impressive work on Rustfmt - implementing
   the new RFC style, fixing (literally) hundreds of bugs, and lots more.
