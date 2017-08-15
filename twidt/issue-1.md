@@ -1,6 +1,6 @@
 # These Weeks in Dev-Tools, issue 1
 
-**2017-08-TODO**
+**2017-08-14**
 
 Welcome to the first ever issue of 'These Weeks in Dev-Tools'! The dev-tools
 team is responsible for developer tools for Rust developers. That means any
