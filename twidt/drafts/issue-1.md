@@ -20,7 +20,19 @@ questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 * Blog post - [one environment to rule them all](https://xanewok.github.io/gsoc/2017/one-environment-to-rule-them-all/) - how the RLS handle environment variables by Xanewok
   - Xanewok also has a few other [blog posts](https://xanewok.github.io/gsoc/) about his GSoC project working on the RLS
 * Blog post - [what the RLS can do](http://www.ncameron.org/blog/what-the-rls-can-do/) by nrc
-
+* [Bindgen](https://github.com/rust-lang-nursery/rust-bindgen)
+  - @bkchr added the ability to `impl Debug` manually in our generated bindings
+    when it can't be `derive(..)`ed: https://github.com/rust-lang-nursery/rust-bindgen/pull/899
+  - @bkchr is adding (should land by the time any post is made) the ability to
+    run `rustfmt` on the emitted bindings: https://github.com/rust-lang-nursery/rust-bindgen/pull/905
+  - @photoszzt added the ability to `derive(Hash)` in the generated bindings:
+    https://github.com/rust-lang-nursery/rust-bindgen/pull/887
+  - @WiSaGaN added support for `derive(Copy)` on large arrays:
+    https://github.com/rust-lang-nursery/rust-bindgen/pull/874
+  - @photoszzt ported our analysis for which types can `derive(Copy)` from an
+    ad-hoc algorithm to our fix-point framework: https://github.com/rust-lang-nursery/rust-bindgen/pull/866
+  - @tmfink added support for targeting different Rust versions and channels
+    (previously it was a binary stable vs nightly choice): https://github.com/rust-lang-nursery/rust-bindgen/pull/892
 
 ## Releases
 
