@@ -10,13 +10,15 @@ Rustdoc, bindgen, etc.
 The dev-tools team does not cover rustc or Cargo, which are large and established
 enough to need their own dedicated teams.
 
-For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/22).
+Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-1.md).
+
+For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/25).
 
 ## Links to tools
 
 * [Rustup](https://github.com/rust-lang-nursery/rustup.rs)
 * [The RLS](https://github.com/rust-lang-nursery/rls)
-  - [rls-vscode](https://github.com/jonathandturner/rls_vscode)
+  - [rls-vscode](https://github.com/rust-lang-nursery/rls-vscode)
   - [rls-analysis](https://github.com/nrc/rls-analysis)
   - [rls-vfs](https://github.com/nrc/rls-vfs)
 * [Rustfmt](https://github.com/rust-lang-nursery/rustfmt)
