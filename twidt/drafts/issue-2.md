@@ -14,6 +14,8 @@ questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 
 * TODO news
 
+TODO contribution opportunities
+
 
 ## Releases
 
@@ -34,7 +36,7 @@ questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 
 ## Meetings
 
+* Rustdoc rewrite [2017-08-14](https://github.com/nrc/dev-tools-team/blob/master/minutes/meeting notes 2017-08-14.md)
 * TODO
-* Rustdoc rewrite [2017-08-14](https://github.com/nrc/dev-tools-team/blob/master/minutes/TODO.md)
 * Topic [date](https://github.com/nrc/dev-tools-team/blob/master/minutes/TODO.md)
 
