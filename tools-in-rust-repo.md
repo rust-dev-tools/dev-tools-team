@@ -94,6 +94,9 @@ For all these changes, it is probably easiest to see how it is done for an
 existing tool and try and copy that where possible. You can try grepping for
 `rls` and `Rls` inside [src/bootstrap](https://github.com/rust-lang/rust/tree/master/src/bootstrap).
 
+You'll need to implement `Step` for your tool in various places, then add your
+tool to the list in `get_step_descriptions` in `src/bootstrap/builder.rs`.
+
 To build the tool you'll need to add the tool as a workspace to `src/Cargo.toml`
 and make several changes to `src/bootstrap/tool.rs`.
 
@@ -116,9 +119,9 @@ any changes to Rustup itself. You'll need to edit `src/bootstrap/dist.rs` and
 ## Tips
 
 Rustbuild will update submodules as part of its build process. If you don't
-commit the change, it will be overwritten. Therefore, you should either commit
-after updating a submodule and before building, or set `submodules = false` in
-`config.toml`.
+commit a change, it will be overwritten. Therefore, you should either commit (to
+both the tool, if necessary, and to Rust) after updating a submodule and before
+building, or set `submodules = false` in `config.toml`.
 
 After making changes to `Cargo.toml`, you need to build to ensure `Cargo.lock`
 is updated. Changes to `Cargo.lock` must be committed along with `Cargo.toml`
