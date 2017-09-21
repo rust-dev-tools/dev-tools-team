@@ -12,7 +12,9 @@ If you're interested in Rust's developer tools and want to contribute or ask
 questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 
 
-* TODO news
+## News
+
+* TODO
 
 
 ## Releases
