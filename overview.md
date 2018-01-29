@@ -194,6 +194,21 @@ TODO
 * rustw
 * docs.rs
 
+## Versioning
+
+### rust-semverver
+
+Rust-semverver is a tool to verify semantic versioning in Rust library crates. It compiles
+two given versions of a crate together and uses the compiler's internals to match up items
+and to determine changes, classifying them according to the [semver
+specification][semver] applied to the Rust typesystem, as outlined in the [API evolution
+RFC][api-evolution].
+
+[semver]: https://semver.org/
+[api-evolution]: https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md
+
+* [Source code](https://github.com/rust-lang-nursery/rust-semverver)
+
 ## Testing, etc.
 
 TODO
