@@ -10,9 +10,9 @@ Rustdoc, bindgen, etc.
 The dev-tools team does not cover rustc or Cargo, which are large and established
 enough to need their own dedicated teams.
 
-Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-2.md).
+Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-3.md).
 
-For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/28).
+For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/35).
 
 ## Links to tools
 
