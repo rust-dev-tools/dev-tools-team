@@ -31,7 +31,7 @@ questions, come chat to us in #[rust-dev-tools](irc://moznet/rust-dev-tools).
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust) 0.2.0, [announcement](https://users.rust-lang.org/t/intellij-rust-0-2-0-released/13419)
 * [Rustfmt](https://crates.io/crates/rustfmt-nightly) 0.3.7, [change log](https://github.com/rust-lang-nursery/rustfmt/blob/master/CHANGELOG.md)
 * [bindgen](https://github.com/rust-lang-nursery/rust-bindgen) v0.31.0 - [announcement](https://users.rust-lang.org/t/bindgen-automatically-generate-rust-ffi-bindings-to-c-and-c-libraries/12126)
-* [vscode Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) 0.2.3: [changelog](https://github.com/rust-lang-nursery/rls-vscode/blob/master/CHANGELOG.md#023---2017-09-21)
+* [vscode Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) 0.3.2: [changelog](https://github.com/rust-lang-nursery/rls-vscode/blob/master/CHANGELOG.md)
 * [Atom IDE](https://github.com/mehcode/atom-ide-rust#install) v0.11 - [tag](https://github.com/mehcode/atom-ide-rust/releases/tag/v0.11.0)
 
 
