@@ -7,8 +7,8 @@ tools means any tool a Rust programmer might use when writing, reading, testing,
 or running Rust programs. For example, Rust integration with editors or IDEs,
 Rustdoc, bindgen, etc.
 
-The dev-tools team does not cover rustc or Cargo, which are large and established
-enough to need their own dedicated teams.
+Dev-tools is an umbrella team and covers several teams and working groups
+dedicated to specific tools. See the [org chart](org-chart.md) for details.
 
 Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-3.md).
 
@@ -27,3 +27,26 @@ For news as it happens, see the [current tools news issue](https://github.com/nr
 * [bindgen](https://github.com/rust-lang-nursery/rust-bindgen)
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust)
 * ... (TODO)
+
+## 2018 Roadmap
+
+* ship it!
+  - rustfmt 1.0
+  - RLS 1.0
+  - VSCode 1.0
+  - Clippy 1.0
+* epoch transition
+  - existing tools should cope
+  - new tools as required
+* a tools presence on the website
+* cargo - TBA
+* test frameworks
+  - RFC
+  - unstable implementation
+  - re-implement #[test] and #[bench] as custom test frameworks
+  - supporting wasm and embedded test frameworks
+* doxidize (rustdoc 2)
+  - initial release
+  - usable for real projects
+* maintain and improve
+  - rustdoc, rustup, bindgen, debugging, editors
