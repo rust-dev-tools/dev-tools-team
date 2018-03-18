@@ -25,7 +25,12 @@
 
 * 2018 edition planning
 * IDE general planning
+* RLS, Clippy, other tools, Bors + infra
 * RLS/compiler integration (long term planning, perhaps covered in 'compiler consumers' session)
+* RLS/save-analysis testing
+  - test for stdout?
+  - try running with -Zsave-analysis and lowering
+  - ...
 * Cargo refactoring and build system integration
 * Clippy lint audit (and work with compiler team on possibly moving lints in/out)
 * Clippy/compiler APIs (perhaps covered in 'compiler consumers' session)
@@ -36,10 +41,12 @@
 
 ### Cargo/Rustup integration
 
+### Cargo/Xargo integration
+
 ### 2018 edition planning
 
 * tools to actively test
-  - RLS, Rustfmt, Clippy, Bindgen, Rustdoc
+  - RLS, Rustfmt, Clippy, Bindgen, Rustdoc, Cargo
 * encourage user testing
 * formal testing plan?
 * Rustfix
