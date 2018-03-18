@@ -43,6 +43,8 @@
 
 ### Cargo/Xargo integration
 
+https://paper.dropbox.com/doc/Xargo-integrationstd-aware-Cargo-KgXr5L75hAAYR0TxM4T3M
+
 ### 2018 edition planning
 
 * tools to actively test
