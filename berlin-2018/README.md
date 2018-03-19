@@ -21,31 +21,46 @@
 * Xargo integration: Wed 10:00 - 11:00
 * Rustup integration: Wed 11:00 - 12:00
 
-## Tools topics to cover
+## Topics/planning
 
-* 2018 edition planning
-* IDE general planning
-* RLS, Clippy, other tools, Bors + infra
+* Tuesday: 2018 edition planning
+* Tuesday: IDE planning
+* Thursday: Clippy lint audit (and work with compiler team on possibly moving lints in/out)
+* Thursday: Custom test frameworks
+* Friday: Compiler & tools (RLS and Clippy, overflow from compiler consumers' session)
+* Friday: Tools overflow (TBD, decide during the week)
+
+possibly covered in other sessions:
+
+* Bors + infra, RLS, Clippy, other tools
 * RLS/compiler integration (long term planning, perhaps covered in 'compiler consumers' session)
+* Clippy/compiler APIs (perhaps covered in 'compiler consumers' session)
+
+maybe side-sessions:
+
 * RLS/save-analysis testing
   - test for stdout?
   - try running with -Zsave-analysis and lowering
   - ...
 * Cargo refactoring and build system integration
-* Clippy lint audit (and work with compiler team on possibly moving lints in/out)
-* Clippy/compiler APIs (perhaps covered in 'compiler consumers' session)
-* Custom test frameworks
-
 
 ## Agendas
 
 ### Cargo/Rustup integration
 
+TODO (nrc)
+
 ### Cargo/Xargo integration
 
 https://paper.dropbox.com/doc/Xargo-integrationstd-aware-Cargo-KgXr5L75hAAYR0TxM4T3M
 
+### Compiler and consumers
+
+https://paper.dropbox.com/doc/Rust-All-Hands-2018-Compiler-and-its-consumers-zxdUwGHXzsGTs63zEEzg5
+
 ### 2018 edition planning
+
+TODO (nrc)
 
 * tools to actively test
   - RLS, Rustfmt, Clippy, Bindgen, Rustdoc, Cargo
@@ -57,6 +72,26 @@ https://paper.dropbox.com/doc/Xargo-integrationstd-aware-Cargo-KgXr5L75hAAYR0TxM
   - known issues?
   - QA
   - testing - users, CI
+
+### Clippy lint audit
+
+TODO (manishearth)
+
+### Custom test frameworks
+
+TODO (killercup or manishearth)
+
+### IDE planning
+
+TODO (nrc)
+
+### Compiler & tools
+
+TODO (nrc) - TBD after 'compiler consumers' session
+
+### Overflow session
+
+TODO (nrc) - TBD during week
 
 
 ## Side-sessions
