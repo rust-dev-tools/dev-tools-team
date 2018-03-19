@@ -50,6 +50,16 @@ maybe side-sessions:
 
 TODO (nrc)
 
+* scope
+  - do we want all of Rustup? If not do we continue to support separate Rustup?
+  - add stuff for discovering tools?
+* UI plan
+  - new Cargo commands?
+* implementation plan
+* risks?
+* distribution story, IDE integration
+* time estimate, resourcing
+
 ### Cargo/Xargo integration
 
 https://paper.dropbox.com/doc/Xargo-integrationstd-aware-Cargo-KgXr5L75hAAYR0TxM4T3M
@@ -85,6 +95,17 @@ TODO (killercup or manishearth)
 
 TODO (nrc)
 
+* Schedule for 1.0 and post-1.0 work
+  - compiler code completion?
+* performance, stability, tech-debt, maintenance
+  - long term and short term
+  - compiler strategy
+  - testing (save-analysis, RLS)
+  - LSP changes
+* brainstorm and prioritise feature work
+* client focus
+* promotion/discovery
+
 ### Compiler & tools
 
 TODO (nrc) - TBD after 'compiler consumers' session
@@ -98,12 +119,12 @@ TODO (nrc) - TBD during week
 
 No room booked, no agenda, but the WG or team would like to chat in person
 
+* RLS/save-analysis testing
+  - test for stdout?
+  - try running with -Zsave-analysis and lowering
+  - ...
+* Cargo refactoring and build system integration
 * Rustup plans? (other than Cargo integration)
 * bindgen planning?
 * Doxidize planning
 
-
-## TODO
-
-* decide what to cover and when
-* create agendas
