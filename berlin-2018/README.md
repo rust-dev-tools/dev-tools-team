@@ -1,5 +1,14 @@
 # Agendas and other info for the 2018 Rust all-hands in Berlin
 
+## Goals
+
+* Have a plan for tools and the 2018 edition
+* Have plans for moving forward with Clippy, Xargo in Cargo, and Rustup in Cargo
+* Be in agreement with other stakeholders around a solution for the bors queue/distro/tools problems
+* Agreement with compiler team on the future of IDE support in the compiler
+* Consensus on custom testing frameworks implementation
+* Jel the new tools teams to some extent (not everyone will be present)
+
 ## Meeting slots
 
 ### Tools
@@ -24,10 +33,10 @@
 ## Topics/planning
 
 * Tuesday: 2018 edition planning
-* Tuesday: IDE planning
-* Thursday: Clippy lint audit (and work with compiler team on possibly moving lints in/out)
+* Tuesday: Clippy lint audit (and work with compiler team on possibly moving lints in/out)
+* Thursday: Compiler & tools (RLS and Clippy, overflow from compiler consumers' session)
 * Thursday: Custom test frameworks
-* Friday: Compiler & tools (RLS and Clippy, overflow from compiler consumers' session)
+* Friday: IDE planning
 * Friday: Tools overflow (TBD, decide during the week)
 
 possibly covered in other sessions:
