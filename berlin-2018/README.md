@@ -82,8 +82,8 @@ https://paper.dropbox.com/doc/Rust-All-Hands-2018-Compiler-and-its-consumers-zxd
 * encourage user testing
 * formal testing plan?
 * Rustfix
-  - project plan
-  - who is responsible?
+  - project plan: https://github.com/rust-lang/rust/issues/49247
+  - who is responsible? killercup, manishearth
   - known issues?
   - QA
   - testing - users, CI
@@ -94,7 +94,11 @@ TODO (manishearth)
 
 ### Custom test frameworks
 
-TODO (killercup or manishearth)
+- merge https://github.com/rust-lang/rfcs/pull/2318
+- discuss concrete first test_framework proc macro api
+- test output
+  - common api abstracting strcutured and human output
+  - decide which cases to cover right now and which to leave open as "custom data"
 
 ### IDE planning
 
