@@ -57,8 +57,6 @@ maybe side-sessions:
 
 ### Cargo/Rustup integration
 
-TODO (nrc)
-
 * scope
   - do we want all of Rustup? If not do we continue to support separate Rustup?
   - add stuff for discovering tools?
@@ -78,8 +76,6 @@ https://paper.dropbox.com/doc/Xargo-integrationstd-aware-Cargo-KgXr5L75hAAYR0TxM
 https://paper.dropbox.com/doc/Rust-All-Hands-2018-Compiler-and-its-consumers-zxdUwGHXzsGTs63zEEzg5
 
 ### 2018 edition planning
-
-TODO (nrc)
 
 * tools to actively test
   - RLS, Rustfmt, Clippy, Bindgen, Rustdoc, Cargo
@@ -101,8 +97,6 @@ TODO (manishearth)
 TODO (killercup or manishearth)
 
 ### IDE planning
-
-TODO (nrc)
 
 * Schedule for 1.0 and post-1.0 work
   - compiler code completion?
