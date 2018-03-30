@@ -104,14 +104,17 @@ TODO (manishearth)
 
 * Schedule for 1.0 and post-1.0 work
   - compiler code completion?
+  - vscode extension 1.0 issues
 * performance, stability, tech-debt, maintenance
   - long term and short term
   - compiler strategy
   - testing (save-analysis, RLS)
   - LSP changes
 * brainstorm and prioritise feature work
-* client focus
+  - do some detailed planning - do we want something like libsyntax2
+* clients plan
 * promotion/discovery
+* intellij plans
 
 ### Compiler & tools
 
