@@ -43,3 +43,7 @@
   - debate and implement first, then 1.0
   - ACTION ITEM (nrc) get core team thoughts
   - ACTION ITEM (clippy team) decide what to do
+
+## Status
+
+* lint audit done: https://github.com/rust-lang-nursery/rust-clippy/pull/2579
