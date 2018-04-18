@@ -5,7 +5,7 @@ This repo contains resources for the Rust dev-tools team.
 The dev-tools team is responsible for developer tools for Rust developers. Dev
 tools means any tool a Rust programmer might use when writing, reading, testing,
 or running Rust programs. For example, Rust integration with editors or IDEs,
-Rustdoc, bindgen, etc.
+Rustdoc, bindgen, etc. See [our roadmap](roadmaps/README.md) for more details.
 
 Dev-tools is an umbrella team and covers several teams and working groups
 dedicated to specific tools. See the [org chart](org-chart.md) for details.
@@ -16,6 +16,7 @@ For news as it happens, see the [current tools news issue](https://github.com/nr
 
 ## Links to tools
 
+* [Cargo](https://github.com/rust-lang/cargo)
 * [Rustup](https://github.com/rust-lang-nursery/rustup.rs)
 * [The RLS](https://github.com/rust-lang-nursery/rls)
   - [rls-vscode](https://github.com/rust-lang-nursery/rls-vscode)
@@ -23,30 +24,9 @@ For news as it happens, see the [current tools news issue](https://github.com/nr
   - [rls-vfs](https://github.com/nrc/rls-vfs)
 * [Rustfmt](https://github.com/rust-lang-nursery/rustfmt)
 * [Rustdoc](https://github.com/rust-lang/rust/tree/master/src/librustdoc)
+* [Doxidize](https://github.com/steveklabnik/doxidize)
 * [Clippy](https://github.com/rust-lang-nursery/rust-clippy)
 * [bindgen](https://github.com/rust-lang-nursery/rust-bindgen)
 * [IntelliJ Rust](https://github.com/intellij-rust/intellij-rust)
-* ... (TODO)
-
-## 2018 Roadmap
-
-* ship it!
-  - rustfmt 1.0
-  - RLS 1.0
-  - VSCode 1.0
-  - Clippy 1.0
-* epoch transition
-  - existing tools should cope
-  - new tools as required
-* a tools presence on the website
-* cargo - TBA
-* test frameworks
-  - RFC
-  - unstable implementation
-  - re-implement #[test] and #[bench] as custom test frameworks
-  - supporting wasm and embedded test frameworks
-* doxidize (rustdoc 2)
-  - initial release
-  - usable for real projects
-* maintain and improve
-  - rustdoc, rustup, bindgen, debugging, editors
+* [Rustfix](https://github.com/killercup/rustfix)
+* [semverver](https://github.com/rust-lang-nursery/rust-semverver)
