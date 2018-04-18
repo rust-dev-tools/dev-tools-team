@@ -23,3 +23,4 @@ meetings. The dev-tools working groups are:
 * Rustup
 * Bindgen
 * debugging
+* 2018 edition tools
