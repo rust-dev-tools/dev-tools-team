@@ -4,6 +4,11 @@ With any luck, Rustfmt 1.0 will happen very soon. The Rust community takes promi
 
 Some changes would clearly be non-breaking (e.g., performance improvements) or clearly breaking (e.g., removing an API function or changing formatting in violation of the specification). However, there is a large grey area of changes (e.g., changing unspecified formatting) that must be addressed so that Rustfmt can evolve without hurting users.
 
+The goal is for formatting to only ever change when a user deliberately upgrades Rustfmt. For a project using Rustfmt, the version of Rustfmt (and thus the exact formatting) can be controlled by some artifact which can be checked-in to version control; thus all project developers and continuous integration will have the same formatting (until Rustfmt is explicitly upgraded).
+
+I propose two possible solutions: versioning is handled by Rustfmt (by formatting according to the rules of previous versions), or versioning is handled by Cargo (by treating Rustfmt as a dev dependency).
+
+
 ## Motivation
 
 Instability is annoying.
@@ -64,15 +69,20 @@ A common way to use Rustfmt is in an editor via the RLS. The RLS is primarily di
 
 ## Goals
 
-If you use the default options, for any code which compiles before formatting under stable Rust, and compiles with the same semantics (i.e., to the same binary) after formatting, then the code will continue to format and the output of formatting will be the same after any update which increases the minor or patch version of Rustfmt.
+The basic goal is that formatting won't change without an explicit upgrade (i.e., a major version increase). This covers all formatting to all code, subject to the following restriction:
 
-Any program which depends on Rustfmt and uses it's API, or script that runs Rustfmt in any stable configuration will continue to build and run after an update.
+* using default options
+* code must compile using stable Rust
+* formatting with Rustfmt is *error free*
 
-I do expect that there will be major version increments to Rustfmt (i.e., there will be a 2.0 some day). However, I hope these are rare and infrequent.
+'Formatting is *error free*' means that when Rustfmt formats a program, it only changes the formatting of the program and does not make any significant changes. I.e., does not change the semantics of the program or any names. This caveat means that we can fix bugs in Rustfmt where the changed formatting cannot affect any users, because previous versions of Rustfmt could cause an error.
+
+Furthermore, any program which depends on Rustfmt and uses it's API, or script that runs Rustfmt in any stable configuration will continue to build and run after an update.
+
+I do expect that there will be major version increments to Rustfmt (i.e., there will be a 2.0 some day). However, I hope these are rare and infrequent. I think these can be rare because backwards compatibility is more valuable for most users than slightly better formatting. On the other hand, I think as the language evolves it is likely that preferred formatting idioms will change, and that when Rustfmt can do more (for example, better format macros or comments), users will want to take advantage of these features.
 
 If a user uses Rustfmt in CI, I do not propose that they will always be able to update their Rust version without having to update their Rustfmt version, and that may cause some formatting changes. But, it should be a conscious decision by the user to do so, and they should not be *surprised* by formatting changes.
 
-**Motivation for default options clause**: it reduces the surface area for unintentional changes, reduces complexity in the Rustfmt implementation, and encourages users to use the default options.
 
 
 ## Definition of changes
@@ -131,7 +141,7 @@ Dealing with API breaking changes and non-breaking changes is trivial so won't b
 
 * Stabilise the `required_version` option (probably renamed)
 * API changes are a major version increment; major and minor formatting changes are a minor formatting increment, BUT major changes are opt-in with a version number, e.g, using rustfmt 1.4, you get 1.0 formatting unless you specify `required_version = 1.4`
-* rustfmt supports all editions on the same major version number and the last previous one (an LTS release - open question: is this necessary?), e.g., rustfmt 2.4 would support `1.19, 2.0, 2.1, 2.2, 2.3, 2.4`
+* rustfmt supports all versions on the same major version number and the last previous one (an LTS release - open question: is this necessary?), e.g., rustfmt 2.4 would support `1.19, 2.0, 2.1, 2.2, 2.3, 2.4`
 * internally, `required_version` is supported just like other configuration options
 * alternative - the edition version could be specified in Cargo.toml as a dev-dependency/task and passed to rustfmt
 
