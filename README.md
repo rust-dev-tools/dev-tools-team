@@ -10,9 +10,9 @@ Rustdoc, bindgen, etc. See [our roadmap](roadmaps/README.md) for more details.
 Dev-tools is an umbrella team and covers several teams and working groups
 dedicated to specific tools. See the [org chart](org-chart.md) for details.
 
-Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-3.md).
+Read the [latest dev-tools news](https://github.com/nrc/dev-tools-team/blob/master/twidt/issue-4.md).
 
-For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/35).
+For news as it happens, see the [current tools news issue](https://github.com/nrc/dev-tools-team/issues/37).
 
 ## Links to tools
 
