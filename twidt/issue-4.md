@@ -47,4 +47,4 @@ questions, come chat to us on [Gitter](https://gitter.im/rust-lang/dev-tools).
 
 ## Meetings
 
-Find all meeting notes [here](https://github.com/nrc/dev-tools-team/tree/master/minutes), some highlights:
+Find all meeting notes [here](https://github.com/nrc/dev-tools-team/tree/master/minutes).
