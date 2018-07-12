@@ -33,16 +33,5 @@ For news as it happens, see the [current tools news issue](https://github.com/nr
 
 ## Communication
 
-We primarily use Gitter to communicate, on the following channels:
-
-* [dev-tools](https://gitter.im/rust-lang/dev-tools)
-* [cargo](https://gitter.im/rust-lang/cargo)
-* [Rustdoc](https://gitter.im/rust-lang/rustdoc)
-* [IDEs and editors](https://gitter.im/rust-lang/IDEs)
-* [Bindgen working group](https://gitter.im/rust-lang/WG-bindgen)
-* [Debugging working group](https://gitter.im/rust-lang/WG-debugging)
-* [Clippy working group](https://gitter.im/rust-lang/WG-clippy)
-* [Doxidize working group](https://gitter.im/rust-lang/WG-doxidize)
-* [Rustfmt working group](https://gitter.im/rust-lang/WG-rustfmt)
-* [Rustup working group](https://gitter.im/rust-lang/WG-rustup)
-* [2018 edition tools working group](https://gitter.im/rust-lang/WG-edition-tools)
+We primarily use Discord to communicate, on the channels in the 'dev tools team'
+group. To join the Rust Discord, use this [invite](https://discordapp.com/invite/rust-lang).
