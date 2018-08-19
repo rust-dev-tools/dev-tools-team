@@ -40,7 +40,7 @@ Goals:
   - goes through build driver
 
 ## Idea: Split Cargo into 3 parts
-1. Front (`$cargo build` -> action graph)
+1. Front (`cargo build` -> action graph)
 2. Build orchestration (action graph -> build plan)
 3. Execution (invoking the build plan commands)
 
