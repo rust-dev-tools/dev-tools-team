@@ -1,24 +1,69 @@
 # RLS <> Cargo <> External build integration
 
-The problem that is being solved is being able to support build systems other than Cargo by the RLS to get diagnostics and project indexing.
+## Glossary
+* Crate - compilation unit as understood by `rustc`
+* (Cargo) Package - set of files, including the package manifest that specifies how these can be compiled into crates
+* Crate target - Way to compile a package into a crate to be used in a certain purpose, e.g. `bin`, `lib`, `build` (script), `test`, ...
+* Crate artifact - file that is the result of crate target compilation
+* Workspace - set of crates that user is actively editing (in pure Cargo world this corresponds to Cargo workspaces)
+* Dependencies - crates supplied by the build system (downloaded from crates.io, specified by path etc, but NOT edited - read-only)
+* Build driver - whoever kicks off and controls most of the build (think `cargo build`, `buck build` etc.)
+* Package dependency graph - dependencies between concrete packages (e.g. `my-crate 0.3.3` -> `serde 1.0.71`)
+* Action graph - graph of abstract actions to be performed, e.g. compiling a crate target or running build script
+* Build plan - dependency graph between commands (mostly `rustc` and possibly build plan execution) which, when executed, leads to compilation of (a) crate target(s)
+* Build orchestration - generating a build plan from an action graph
 
-## Scope
+# Problem
+
+The problem that is being solved is twofold:
+1. RLS needs to (efficiently) support Rust projects using other build systems than pure Cargo (needs to know relevant `rustc` commands)
+2. Cargo and other build systems should understand each other (when one performs the build sometimes it needs to know how to build an artifact built using the other)
+
+
 We can think of the 3 components and boundaries between them:
 
 RLS <> Cargo <> External build system
 
-Who has the responsibility for orchestrating the build?
-1. RLS - needs to maintain its own version of dep graph/build plan
-2. Cargo - RLS asks Cargo for what needs to be run (e.g. 'given these dirty files, what commands should I rerun') and RLS executes the commands
+For performing analysis, RLS needs to answer the following question: 'given these dirty files, what commands should I run?'.
+For build system interop, Cargo and other build systems need to settle on a common
+abstraction (packages/crates/files dependencies? bare invocations?) in order to understand steps needed to compile a target built using the other system.
 
-## Current status
-RLS keeps its own crate target dependency graph with commands associated with them. To do so, it invokes Cargo to perform a full `check` build and intercepts every `rustc` invocaton and associates it with a crate target.  When modifying files the RLS detects dirty crate targets and reruns the `rustc` commands.
+(RLS) Who is responsible for build orchestration?
+1. RLS internally - needs to maintain its own version of abstract action graph and a mapping between it and a concrete build plan. Needs to understand which crate targets are dirty from a set of dirty files.
+2. Build system - RLS fetches the build plan from an external build system. Bonus points if the RLS can also only supply a list of dirty files and receive only the relevant sub-plan to execute.
 
-Goals:
-1. Don't duplicate dep graph/build orchestration inside the RLS
+(Cargo <> other build system) What do systems need to know about each other?
+1. Build output for a given crate target - knowing this, a build system can only delegate to the other as a subroutine and use only the resulting artifacts (e.g. `.rlib`, debug symbols)
+2. Transitive file-level dependencies
+    1. Correct dependency/freshness tracking, e.g. external build system might need to understand that Cargo-managed crate target is fresh and can reuse (cloud) cache-managed artifacts
+    2. Generating external build system manifests, e.g. Makefiles
+3. Crate target dependencies - (together with file-level deps?) could be used to generate external build system manifests for more abstract build systems, e.g. define Buck/Bazel build rules
+
+# Current status
+## RLS
+RLS keeps its own crate target dependency graph with commands associated with them (which can be thought of as an action graph + build plan). To do so, it invokes Cargo to perform a full `check` build and intercepts every `rustc` invocaton and associates it with a crate target.  When modifying files the RLS detects dirty crate targets using a path heuristic and reruns the associated `rustc` commands.
+
+We'd like to:
+1. Not duplicate dep graph/build orchestration inside the RLS
 2. Understand other build systems - provide a common interface for an executable build plan
 
-## What Cargo does
+### Build types
+#### Incremental
+We assume that the build plan has not changed, which means we can reuse it and query it for required commands that has to be rerun.
+  - triggerd by the RLS (source files changed)
+#### From scratch
+The build plan has possibly changed or is insufficient - we need to regenerate it using the build system.
+  - triggered by the user (e.g. build manifest or relevant package configuration was changed)
+
+## Cargo
+Cargo is capable of generating a build plan for `cargo build` (with `-Z unstable-options --build-plan`), which is a dependency graph between commands (`rustc` and calling build scripts, together with args, env, cwd), where each command is also tagged with a package name, version, crate target kind, Target/Host architecture differentiation and a list of resulting crate artifacts.
+
+Generating the build plan and its format are currently unstable and not yet used to integrate with other build systems or RLS.
+
+Note: When emitting build plan for `cargo check` is supported, the RLS could possibly drop a dependency the Cargo library.
+
+### What Cargo does (`cargo {build,check}`)
+An arbitrary breakdown that we think might be useful to identify separate, replaceable steps:
 1. Configuration (incl. package overrides etc.)
 2. Version resolution
 3. Package dependency graph construction (Cargo.lock)
@@ -31,28 +76,30 @@ Goals:
 6. Build plan construction - flattened view into action graph mapped into actual system commands
 7. Execute the commands!
 
-## RLS build types
-* Incremental build (We assume that action graph has not changed)
-  - triggerd by the RLS
-  - only requires dirty build plan, which can be executed
-* From-scratch build (Action graph might have changed - regenerate it via build system)
-  - triggered by the user or the RLS
-  - goes through build driver
-
-## Idea: Split Cargo into 3 parts
-1. Front (`cargo build` -> action graph)
-2. Build orchestration (action graph -> build plan)
-3. Execution (invoking the build plan commands)
+# Possible plan
+## Split Cargo into 3 parts
+Having the above sequence of steps for `cargo build`, we can group these into:
+1. Front (`cargo build` -> action graph) (Step 1-5)
+2. Build orchestration (action graph -> build plan) (Step 6)
+3. Execution (invoking the build plan commands) (Step 7)
 
 With this we can mix and match:
-1. RLS should always execute the build (we need to intercept the rustc calls to give live diagnostics and save-analysis)
-2. External build system can provide its set of packages and dependencies between those while Cargo orchestrates the remaining build into build plan (understandable by the RLS)
-3. Cargo can execute its front, fetch packages from crates.io, form an action graph, which can be further reused and lowered into a build plan by the external build system
+1. RLS should always execute the build (needs to invoke `rustc` itself to perform analysis)
+2. External build system can provide its set of packages and dependencies between them and Cargo can orchestrate that into a build plan (understandable by the RLS)
+3. Cargo can execute its front, fetch packages from crates.io, form an action graph, which can be further reused and translated into a build plan by the external build system
 4. etc.
 
-## Glossary
-* Workspace - set of crates that user is actively editing (in pure Cargo world this corresponds to Cargo workspaces)
-* Dependencies - supplied by the build system (downloaded from crates.io, specified by path etc, but NOT edited - read-only)
-* Build driver - whoever kicks off and controls most of the build (think `cargo build`, `buck build` etc.)
-* Package dependency graph - dependencies between concrete packages (e.g. `my-crate 0.3.3` -> `serde 1.0.71`)
-* Action graph - graph of abstract actions to be performed, e.g. compiling a crate or running build script
+## Concrete goals
+### RLS <> other build systems
+* Establish a preliminary build plan format (probably use/adapt current Cargo `--build-plan`)
+* RLS needs to understand the build plan and be able to execute it in a sandbox (think `target/rls` dir), while consuming the save-analysis and diagnostics
+### RLS <> Cargo
+* Implement `cargo check ... --build-plan` in Cargo
+### RLS <> Buck
+* Buck needs to be able to tell the (almost) exact `rustc` command used to compile a crate target (embed the command in save-analysis?)
+* Translate Buck rules/generated save-analysis into build plan
+### Cargo <> other build systems
+* Establish a preliminary, Cargo action graph format - also notion of package version, targets (incl. build scripts and proc macros), Target/Host arch, Cargo features(?), declarative `rustc` args (profiles)
+* Allow Cargo to be fed an action graph format to be later executed by it
+* Emit also input files, in addition to command outputs, in the build plan to provide file-level dependencies
+* What more?
