@@ -7,7 +7,7 @@ We’re already more than a little into 2019 so now it’s a good time to plan a
 
 Fresh out of Rust All Hands, which was held and attended by the Rust team in Berlin two weeks ago (Feb 2019), we’re excited to say that we spent a considerate amount of time talking about the future of the Rust IDE support and the fruit of that is formation of an experimental RLS 2.0 compiler working group:
 
-https://github.com/rust-analyzer/WG-rls2.0
+https://github.com/rust-lang/compiler-team/tree/master/working-groups/rls-2.0
 
 Initially built on top of rust-analyzer, the primary goal is to discover an ideal infrastructure on top of which we can build an IDE-aware compiler, while also exploring how we can split `rustc` into more manageable chunks with better-defined boundaries.
 
